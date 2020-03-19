@@ -1,21 +1,12 @@
-library(readr)
-library(pins)
-library(ggplot2)
-library(dplyr)
 library(tidyverse)
+library(ggplot2)
 library(ggrepel)
-library(lubridate)
 
-if (!dir.exists("data")) dir.create("data")
-if (!file.exists("data/full_data.csv") ||
-    file.info("data/full_data.csv")$mtime < (Sys.time() - 6*3600)) {
-  message("Downloading data")
-  download.file("https://covid.ourworldindata.org/data/full_data.csv",
-                destfile = "data/full_data.csv")
-}
+source("R/get_data.R")
 
-dat <-
-  read_csv("data/full_data.csv", col_types = "Dcdddd")
+
+dat <- get_covid19_data()
+
 
 sa_latest <-
   tribble(
@@ -34,19 +25,22 @@ dat %>%
 
 dat
 
+imported_threshold <- 1
 
+# filter out World and International
 dat_f <-
   dat %>%
   filter(
     location != "World",
     location != "International",
     ) %>%
-  filter(total_cases >= 30) %>%
+  filter(total_cases >= imported_threshold) %>%
   group_by(location) %>%
   mutate(days = date - min(date))
 
 dat_f
 
+# shortlist of countries to highlight
 to_include <- c(
   "South Africa",
   "Italy",
@@ -78,11 +72,13 @@ dat_l <-
   filter(days == max(days)) %>%
   filter(total_cases > 100)
 
+
 dat_l_all <-
   dat_f %>%
   group_by(location) %>%
   filter(days == max(days)) %>%
   filter(total_cases > 100)
+
 
 dat_f %>%
   ggplot(aes(x = days, y = total_cases,
@@ -94,19 +90,39 @@ dat_f %>%
   scale_x_continuous(breaks = seq(0, by = 7, to = 70)) +
   guides(col = FALSE)
 
-dat_e %>%
-  ggplot(aes(x = days, y = total_cases,
-             group = location
-  )) +
-  geom_line(col = "grey80") +
-  geom_line(data = dat_i, aes(color = location), size = 1) +
-  geom_text_repel(aes(label = location, color = location), data = dat_l, size = 3) +
-  # scale_y_log10() +
-  scale_x_continuous(breaks = seq(0, by = 7, to = 70)) +
-  # scale_color_manual(values = c("grey70", "blue")) +
-  # scale_size_manual(values = c(0.5, 3)) +
-  guides(col = FALSE) +
-  ggtitle("Total Covid-19 cases") +
-  xlab("Number of days after 30th case") +
-  ylab(NULL) +
-  ylim(0, 200)
+plot_covid19 <- function(scale = c("linear", "log10"), ylim = NA){
+  scale <- match.arg(scale)
+
+  p <-
+    dat_e %>%
+    select(days, total_cases, location) %>%
+    filter(!is.na(total_cases)) %>%
+    ggplot(aes(x = days, y = total_cases,
+               group = location
+    )) +
+    geom_line(col = "grey80") +
+    geom_line(data = dat_i, aes(color = location), size = 1) +
+    geom_text_repel(aes(label = location, color = location), data = dat_l, size = 3) +
+    scale_x_continuous(breaks = seq(from = 0, by = 7, to = 70)) +
+    guides(col = FALSE) +
+    ggtitle("Total Covid-19 cases") +
+    xlab(glue::glue("Number of days after {imported_threshold}th case"))
+
+  p <-
+    p +
+    if (scale == "log10") {
+      scale_y_log10()
+    } else {
+      scale_y_continuous(limits = c(0, ylim))
+    }
+
+  p +
+    ylab(NULL)
+}
+
+plot_covid19(scale = "linear")
+plot_covid19(scale = "linear", ylim = 1000)
+plot_covid19(scale = "linear", ylim = 200)
+
+plot_covid19(scale = "log10")
+
