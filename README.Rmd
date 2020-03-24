@@ -124,7 +124,15 @@ dat %>%
   tail(10)
 ```
 
+### Linear scale
 
+```{r}
+dat %>%
+  prep_data_timeseries(threshold = imported_threshold) %>%
+  plot(scale = "linear")
+```
+
+### Logarithmic scale
 
 ```{r}
 dat %>%
