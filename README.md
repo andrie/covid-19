@@ -19,17 +19,19 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
+Last updated at 2020-03-24 05:22:01
+
 ## Total cases
 
     #> # A tibble: 6 x 5
     #>   country      date        long   lat     n
     #>   <chr>        <date>     <dbl> <dbl> <dbl>
-    #> 1 South Africa 2020-03-17  22.9 -30.6    62
-    #> 2 South Africa 2020-03-18  22.9 -30.6   116
-    #> 3 South Africa 2020-03-19  22.9 -30.6   150
-    #> 4 South Africa 2020-03-20  22.9 -30.6   202
-    #> 5 South Africa 2020-03-21  22.9 -30.6   240
-    #> 6 South Africa 2020-03-22  22.9 -30.6   274
+    #> 1 South Africa 2020-03-18  22.9 -30.6   116
+    #> 2 South Africa 2020-03-19  22.9 -30.6   150
+    #> 3 South Africa 2020-03-20  22.9 -30.6   202
+    #> 4 South Africa 2020-03-21  22.9 -30.6   240
+    #> 5 South Africa 2020-03-22  22.9 -30.6   274
+    #> 6 South Africa 2020-03-23  22.9 -30.6   274
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
@@ -41,15 +43,15 @@ updated once per day.
     #> # Groups:   country [1]
     #>   country      date        long   lat     n
     #>   <chr>        <date>     <dbl> <dbl> <dbl>
-    #> 1 South Africa 2020-03-17  22.9 -30.6     0
-    #> 2 South Africa 2020-03-18  22.9 -30.6     0
-    #> 3 South Africa 2020-03-19  22.9 -30.6     0
-    #> 4 South Africa 2020-03-20  22.9 -30.6     0
-    #> 5 South Africa 2020-03-21  22.9 -30.6     0
-    #> 6 South Africa 2020-03-22  22.9 -30.6     0
+    #> 1 South Africa 2020-03-18  22.9 -30.6     0
+    #> 2 South Africa 2020-03-19  22.9 -30.6     0
+    #> 3 South Africa 2020-03-20  22.9 -30.6     0
+    #> 4 South Africa 2020-03-21  22.9 -30.6     0
+    #> 5 South Africa 2020-03-22  22.9 -30.6     0
+    #> 6 South Africa 2020-03-23  22.9 -30.6     0
 
 ![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
-## Regional distribution
+## Regional distribution of Covid-19 deaths
 
 ![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
