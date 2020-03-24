@@ -13,6 +13,8 @@ This is another analysis of the outbreak of [Coronavirus / Covid-19 disease](htt
 
 Many others have done excellent analysis, and my attempts are specifically trying to add flavour to the statistics in South Africa.
 
+
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

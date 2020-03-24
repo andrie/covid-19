@@ -51,7 +51,7 @@ get_covid19_data <- function(type = c("cases", "deaths", "recovered"), aggregate
       long = "Long"
     ) %>%
     tidyr::pivot_longer(
-      tidyr::matches("\\d*/\\d*/\\d*"),
+      tidyr::matches("\\d+/\\d+/\\d+"),
       names_to = "date",
       values_to = "n"
     ) %>%
