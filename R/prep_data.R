@@ -21,7 +21,8 @@ prep_data_timeseries <- function(dat, threshold = 30) {
     "Japan",
     "South Korea",
     "Singapore",
-    "United Kingdom"
+    "United Kingdom",
+    "Spain"
   )
 
 

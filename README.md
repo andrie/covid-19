@@ -19,36 +19,46 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-03-24 07:36:36
+Last updated at 2020-03-24 20:30:05
 
 ## Total cases
 
-    #> # A tibble: 6 x 5
-    #>   country      date        long   lat     n
-    #>   <chr>        <date>     <dbl> <dbl> <dbl>
-    #> 1 South Africa 2020-03-18  22.9 -30.6   116
-    #> 2 South Africa 2020-03-19  22.9 -30.6   150
-    #> 3 South Africa 2020-03-20  22.9 -30.6   202
-    #> 4 South Africa 2020-03-21  22.9 -30.6   240
-    #> 5 South Africa 2020-03-22  22.9 -30.6   274
-    #> 6 South Africa 2020-03-23  22.9 -30.6   274
+    #> # A tibble: 10 x 3
+    #> # Groups:   country [1]
+    #>    country      date       cases
+    #>    <chr>        <date>     <dbl>
+    #>  1 South Africa 2020-03-14    38
+    #>  2 South Africa 2020-03-15    51
+    #>  3 South Africa 2020-03-16    62
+    #>  4 South Africa 2020-03-17    62
+    #>  5 South Africa 2020-03-18   116
+    #>  6 South Africa 2020-03-19   150
+    #>  7 South Africa 2020-03-20   202
+    #>  8 South Africa 2020-03-21   240
+    #>  9 South Africa 2020-03-22   274
+    #> 10 South Africa 2020-03-23   402
+
+### Linear scale
+
+Using a linear scale it’s easiest to see the relative scale of the worst
+affected countries, but it’s hard to distinguish the countries that were
+affected later.
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+### Logarithmic scale
+
+Using a logarithmic scale it’s easier to discern whether the pandemic is
+still in the exponential growth phase. On this scale, a straight line
+indicates exponential growth.
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ## Number of deaths
 
-    #> # A tibble: 6 x 5
-    #> # Groups:   country [1]
-    #>   country      date        long   lat     n
-    #>   <chr>        <date>     <dbl> <dbl> <dbl>
-    #> 1 South Africa 2020-03-18  22.9 -30.6     0
-    #> 2 South Africa 2020-03-19  22.9 -30.6     0
-    #> 3 South Africa 2020-03-20  22.9 -30.6     0
-    #> 4 South Africa 2020-03-21  22.9 -30.6     0
-    #> 5 South Africa 2020-03-22  22.9 -30.6     0
-    #> 6 South Africa 2020-03-23  22.9 -30.6     0
+    #> # A tibble: 0 x 3
+    #> # Groups:   country [0]
+    #> # ... with 3 variables: country <chr>, date <date>, deaths <dbl>
 
 ![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 

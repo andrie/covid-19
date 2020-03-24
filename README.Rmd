@@ -29,6 +29,7 @@ suppressPackageStartupMessages({
   library(tidyverse)
   library(ggplot2)
   library(ggrepel)
+  library(DT)
 })
 
 source("R/get_data.R")
@@ -56,34 +57,45 @@ dat <- get_covid19_data(type)
 
 if (type == "cases"){
   dat <-
-    tribble(
-      ~country, ~date, ~long, ~lat, ~n,
-      "China", as.Date("2020-01-16"), 112, 32.8, 28,
-      "China", as.Date("2020-01-17"), 112, 32.8, 41,
-      "China", as.Date("2020-01-20"), 112, 32.8, 260
-      # "South Africa", as.Date("2020-03-23"), 22.9, -30.6, 402
-    ) %>%
+    dat %>% 
     bind_rows(
-      dat
-    )
+      tribble(
+        ~country, ~date, ~long, ~lat, ~n,
+        "China", as.Date("2020-01-16"), 112, 32.8, 28,
+        "China", as.Date("2020-01-17"), 112, 32.8, 41,
+        "China", as.Date("2020-01-20"), 112, 32.8, 260,
+        "South Africa", as.Date("2020-03-23"), 22.9, -30.6, 402
+      )
+    ) %>% 
+    group_by(country, date) %>% 
+    summarize(n = max(n))
   attr(dat, "type") <- "cases"
 }
-
 ```
 
 ```{r}
 dat %>%
   filter(country == "South Africa") %>%
-  tail()
+  select(country, date, n) %>% 
+  filter(n > 0) %>% 
+  rename(cases = n) %>% 
+  arrange(country, date) %>% 
+  tail(10)
 ```
 
+### Linear scale
 
+Using a linear scale it's easiest to see the relative scale of the worst affected countries, but it's hard to distinguish the countries that were affected later.
 
 ```{r}
 dat %>%
   prep_data_timeseries(threshold = imported_threshold) %>%
   plot(scale = "linear")
 ```
+
+### Logarithmic scale
+
+Using a logarithmic scale it's easier to discern whether the pandemic is still in the exponential growth phase.  On this scale, a straight line indicates exponential growth.
 
 ```{r}
 dat %>%
@@ -105,7 +117,11 @@ dat <- get_covid19_data(type)
 ```{r}
 dat %>%
   filter(country == "South Africa") %>%
-  tail()
+  select(country, date, n) %>% 
+  filter(n > 0) %>% 
+  rename(deaths = n) %>% 
+  arrange(country, date) %>% 
+  tail(10)
 ```
 
 
