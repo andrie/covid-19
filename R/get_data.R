@@ -29,11 +29,11 @@ get_covid19_data <- function(type = c("cases", "deaths", "recovered"), aggregate
 
   file <- switch(
     type,
-    cases = "time_series_19-covid-Confirmed.csv",
-    deaths = "time_series_19-covid-Deaths.csv",
-    recovered = "time_series_19-covid-Recovered.csv"
+    cases = "time_series_covid19_confirmed_global.csv",
+    deaths = "time_series_covid19_deaths_global.csv"
+    # recovered = "time_series_19-covid-Recovered.csv"
   )
-
+  # browser()
   dat <-
     paste0(url, file) %>%
     pins::pin() %>%

@@ -19,7 +19,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-03-24 20:32:38
+Last updated at 2020-03-25 05:46:22
 
 ## Total cases
 
@@ -27,16 +27,16 @@ Last updated at 2020-03-24 20:32:38
     #> # Groups:   country [1]
     #>    country      date       cases
     #>    <chr>        <date>     <dbl>
-    #>  1 South Africa 2020-03-14    38
-    #>  2 South Africa 2020-03-15    51
-    #>  3 South Africa 2020-03-16    62
-    #>  4 South Africa 2020-03-17    62
-    #>  5 South Africa 2020-03-18   116
-    #>  6 South Africa 2020-03-19   150
-    #>  7 South Africa 2020-03-20   202
-    #>  8 South Africa 2020-03-21   240
-    #>  9 South Africa 2020-03-22   274
-    #> 10 South Africa 2020-03-23   402
+    #>  1 South Africa 2020-03-15    51
+    #>  2 South Africa 2020-03-16    62
+    #>  3 South Africa 2020-03-17    62
+    #>  4 South Africa 2020-03-18   116
+    #>  5 South Africa 2020-03-19   150
+    #>  6 South Africa 2020-03-20   202
+    #>  7 South Africa 2020-03-21   240
+    #>  8 South Africa 2020-03-22   274
+    #>  9 South Africa 2020-03-23   402
+    #> 10 South Africa 2020-03-24   554
 
 ### Linear scale
 
