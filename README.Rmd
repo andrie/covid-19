@@ -104,6 +104,25 @@ dat %>%
 ```
 
 
+## New cases
+
+```{r}
+get_covid19_data(type, aggregate = TRUE) %>% 
+  arrange(country, date) %>% 
+  group_by(country) %>% 
+  mutate(new = n - lag(n)) %>% 
+  filter(n > 0) %>%
+  filter(country == "South Africa") %>% 
+  ggplot(aes(x = date, y = new)) +
+  geom_line() +
+  geom_smooth(method = "gam", formula = y ~ s(x, bs = "cs"), method.args = list(family = poisson, gamma = 2)) +
+  ggtitle("New cases reported in South Africa") + 
+  xlab(NULL) +
+  ylab(NULL)
+```
+
+
+
 ## Number of deaths
 
 ```{r}
