@@ -19,7 +19,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-03-26 21:31:05
+Last updated at 2020-03-26 21:35:48
 
 ## Total cases
 
@@ -72,6 +72,10 @@ indicates exponential growth.
 
 ![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
-## Regional distribution of Covid-19 deaths
+## New deaths
 
 ![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+## Regional distribution of Covid-19 deaths
+
+![](README_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
