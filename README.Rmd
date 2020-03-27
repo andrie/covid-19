@@ -112,8 +112,8 @@ get_covid19_data(type, aggregate = TRUE) %>%
   group_by(country) %>% 
   mutate(new = n - lag(n)) %>% 
   filter(n > 0) %>%
-  # filter(country == "South Africa") %>% 
-  filter(country == "Italy") %>% 
+  filter(country == "South Africa") %>%
+  # filter(country == "Italy") %>% 
   ggplot(aes(x = date, y = new)) +
   geom_line() +
   geom_smooth(method = "gam", formula = y ~ s(x, bs = "cs"), method.args = list(family = poisson, gamma = 2)) +
@@ -168,8 +168,8 @@ get_covid19_data(type, aggregate = TRUE) %>%
   group_by(country) %>% 
   mutate(new = n - lag(n)) %>% 
   filter(n > 0) %>%
-  # filter(country == "South Africa") %>% 
-  filter(country == "Italy") %>% 
+  # filter(country == "South Africa") %>%
+  filter(country == "Italy") %>%
   ggplot(aes(x = date, y = new)) +
   geom_line() +
   geom_smooth(method = "gam", formula = y ~ s(x, bs = "cs"), method.args = list(family = poisson, gamma = 2)) +
