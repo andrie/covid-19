@@ -9,7 +9,18 @@ source("R/plot_covid.R")
 type <- "cases"
 
 
-dat <- get_covid19_data(type)
+dat <- get_covid19_data(type, aggregate = FALSE)
+
+dat %>%
+  filter(country == "United Kingdom") %>%
+  tail()
+
+
+dat %>%
+  prep_data_map() %>%
+  plot() +
+  coord_map(xlim = c(-35, 35), ylim = c(35, 65), clip = "on", projection = "conic", 50)
+
 
 dat %>%
   filter(country == "South Africa") %>%

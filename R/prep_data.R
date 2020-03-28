@@ -74,8 +74,8 @@ prep_data_map <- function(dat) {
     filter(date == max(date)) %>%
     summarise(
       date = max(date),
-      long = mean(long),
-      lat = mean(lat),
+      long = weighted.mean(long, n),
+      lat = weighted.mean(lat, n),
       n = sum(n)
     )
 

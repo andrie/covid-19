@@ -68,15 +68,20 @@ if (type == "cases"){
       )
     ) %>% 
     group_by(country, date) %>% 
-    summarize(n = max(n))
+    summarize(
+      long = mean(long),
+      lat = mean(lat),
+      n = max(n))
   attr(dat, "type") <- "cases"
 }
 ```
 
+
+
 ```{r}
 dat %>%
   filter(country == "South Africa") %>%
-  select(country, date, n) %>% 
+  select(country, date, lat, long, n) %>% 
   filter(n > 0) %>% 
   rename(cases = n) %>% 
   arrange(country, date) %>% 
@@ -120,6 +125,29 @@ get_covid19_data(type, aggregate = TRUE) %>%
   ggtitle("New cases reported in South Africa") + 
   xlab(NULL) +
   ylab(NULL)
+```
+
+
+## Regional distribution of Covid-19 cases
+
+```{r}
+dat %>%
+  prep_data_map() %>%
+  plot()
+```
+```{r, message = FALSE}
+dat %>%
+  prep_data_map() %>%
+  plot() +
+  coord_map(xlim = c(-15, 35), ylim = c(35, 65), clip = "on", projection = "conic", 50)
+```
+
+
+```{r, message = FALSE}
+dat %>%
+  prep_data_map() %>%
+  plot() +
+  coord_map(xlim = c(-30, 60), ylim = c(-35, 35))
 ```
 
 

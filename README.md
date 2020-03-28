@@ -19,24 +19,24 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-03-27 07:14:57
+Last updated at 2020-03-28 05:30:35
 
 ## Total cases
 
-    #> # A tibble: 10 x 3
+    #> # A tibble: 10 x 5
     #> # Groups:   country [1]
-    #>    country      date       cases
-    #>    <chr>        <date>     <dbl>
-    #>  1 South Africa 2020-03-17    62
-    #>  2 South Africa 2020-03-18   116
-    #>  3 South Africa 2020-03-19   150
-    #>  4 South Africa 2020-03-20   202
-    #>  5 South Africa 2020-03-21   240
-    #>  6 South Africa 2020-03-22   274
-    #>  7 South Africa 2020-03-23   402
-    #>  8 South Africa 2020-03-24   554
-    #>  9 South Africa 2020-03-25   709
-    #> 10 South Africa 2020-03-26   927
+    #>    country      date         lat  long cases
+    #>    <chr>        <date>     <dbl> <dbl> <dbl>
+    #>  1 South Africa 2020-03-18 -30.6  22.9   116
+    #>  2 South Africa 2020-03-19 -30.6  22.9   150
+    #>  3 South Africa 2020-03-20 -30.6  22.9   202
+    #>  4 South Africa 2020-03-21 -30.6  22.9   240
+    #>  5 South Africa 2020-03-22 -30.6  22.9   274
+    #>  6 South Africa 2020-03-23 -30.6  22.9   402
+    #>  7 South Africa 2020-03-24 -30.6  22.9   554
+    #>  8 South Africa 2020-03-25 -30.6  22.9   709
+    #>  9 South Africa 2020-03-26 -30.6  22.9   927
+    #> 10 South Africa 2020-03-27 -30.6  22.9  1170
 
 ### Linear scale
 
@@ -58,24 +58,33 @@ indicates exponential growth.
 
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-## Number of deaths
+## Regional distribution of Covid-19 cases
 
-    #> # A tibble: 0 x 3
-    #> # Groups:   country [0]
-    #> # ... with 3 variables: country <chr>, date <date>, deaths <dbl>
-
-### Linear scale
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
+## Number of deaths
+
+    #> # A tibble: 1 x 3
+    #> # Groups:   country [1]
+    #>   country      date       deaths
+    #>   <chr>        <date>      <dbl>
+    #> 1 South Africa 2020-03-27      1
+
+### Linear scale
+
+![](README_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
 ### Logarithmic scale
 
-![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ## New deaths
 
-![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ## Regional distribution of Covid-19 deaths
 
-![](README_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
