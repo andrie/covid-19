@@ -1,6 +1,10 @@
 library(tidyverse)
 library(ggplot2)
 library(ggrepel)
+library(gganimate)
+library(gifski)
+library(RcppRoll)
+
 
 source("R/get_data.R")
 source("R/prep_data.R")
@@ -9,54 +13,82 @@ source("R/plot_covid.R")
 type <- "cases"
 
 
-dat <- get_covid19_data(type, aggregate = FALSE)
+dat <-
+  get_covid19_data(type, aggregate = TRUE) %>%
+  group_by(country) %>%
+  mutate(
+    n = roll_meanr(n, n = 3),
+    new = n - lag(n)
+  )
+
 
 dat %>%
+  filter(
+    n >= 5,
+    new >= 5
+  ) %>%
   filter(country == "United Kingdom") %>%
-  tail()
-
-
-dat %>%
-  prep_data_map() %>%
-  plot() +
-  coord_map(xlim = c(-35, 35), ylim = c(35, 65), clip = "on", projection = "conic", 50)
-
-
-dat %>%
-  filter(country == "South Africa") %>%
-  tail()
-
-if (type == "cases"){
-  dat <-
-    tribble(
-      ~country, ~date, ~long, ~lat, ~n,
-      "China", as.Date("2020-01-16"), 112, 32.8, 28,
-      "China", as.Date("2020-01-17"), 112, 32.8, 41,
-      "China", as.Date("2020-01-20"), 112, 32.8, 260,
-      "South Africa", as.Date("2020-03-23"), 22.9, -30.6, 402
-    ) %>%
-    bind_rows(
-      dat
-    )
-  attr(dat, "type") <- "cases"
-}
-
-
-dat %>%
-  filter(country == "China") %>%
   head()
+
+dat_last <-
+  dat %>%
+  group_by(country) %>%
+  filter(date == max(date), n >= 100)
+
+dat_highlight_low <-
+  dat_last %>%
+    ungroup() %>%
+    filter(n > 100) %>%
+    mutate(
+      angle = tan(new / n)
+    ) %>%
+    top_n(5, -angle)
+
+dat_highlight_high <-
+  dat_last %>%
+  ungroup() %>%
+  top_n(10, n)
+
+
+dat_highlight
+
+dat %>%
+  ggplot(aes(x = n, y = new, group = country)) +
+  geom_line(alpha = 0.5) +
+  geom_point(data = dat_last) +
+  geom_point(data = dat_highlight_high, col = "red") +
+  geom_text_repel(data = dat_highlight_high, aes(label = country)) +
+  geom_point(data = dat_highlight_low, col = "blue") +
+  geom_text_repel(data = dat_highlight_low, aes(label = country)) +
+  scale_x_log10(limits = c(1, NA), labels = scales::comma) +
+  scale_y_log10(limits = c(NA, NA), )
+
+
+get_covid19_data(aggregate = FALSE) %>%
+  filter(country == "Italy") %>%
+  group_by(state) %>%
+  tally()
+
+
+dat <- get_covid19_data(aggregate = FALSE) %>%
+  filter(country == "Italy") %>%
+  mutate(location = paste(lat, long, sep = "-")) %>%
+  group_by(location) %>%
+  mutate(
+    n = roll_meanr(n, n = 3),
+    new = n - lag(n)
+  )
 
 
 dat
 
-imported_threshold <- if (type == "cases") 30 else 10
-
-
 dat %>%
-  prep_data_timeseries(threshold = imported_threshold) %>%
-  plot(scale = "linear")
-
-dat %>%
-  prep_data_timeseries(threshold = imported_threshold) %>%
-  plot(scale = "log10")
-
+  ggplot(aes(x = n, y = new, group = location)) +
+  geom_line(alpha = 0.5) +
+  # geom_point(data = dat_last) +
+  # geom_point(data = dat_highlight_high, col = "red") +
+  # geom_text_repel(data = dat_highlight_high, aes(label = country)) +
+  # geom_point(data = dat_highlight_low, col = "blue") +
+  # geom_text_repel(data = dat_highlight_low, aes(label = country)) +
+  scale_x_log10(limits = c(1, NA), labels = scales::comma) +
+  scale_y_log10(limits = c(NA, NA), )

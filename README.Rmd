@@ -122,6 +122,7 @@ get_covid19_data(type, aggregate = TRUE) %>%
   ggplot(aes(x = date, y = new)) +
   geom_line() +
   geom_smooth(method = "gam", formula = y ~ s(x, bs = "cs"), method.args = list(family = poisson, gamma = 2)) +
+  scale_x_date(breaks = scales::breaks_width("7 days")) +
   ggtitle("New cases reported in South Africa") + 
   xlab(NULL) +
   ylab(NULL)
