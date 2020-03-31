@@ -19,7 +19,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-03-30 17:24:51
+Last updated at 2020-03-31 07:43:49
 
 ## Total cases
 
@@ -27,16 +27,16 @@ Last updated at 2020-03-30 17:24:51
     #> # Groups:   country [1]
     #>    country      date         lat  long cases
     #>    <chr>        <date>     <dbl> <dbl> <dbl>
-    #>  1 South Africa 2020-03-20 -30.6  22.9   202
-    #>  2 South Africa 2020-03-21 -30.6  22.9   240
-    #>  3 South Africa 2020-03-22 -30.6  22.9   274
-    #>  4 South Africa 2020-03-23 -30.6  22.9   402
-    #>  5 South Africa 2020-03-24 -30.6  22.9   554
-    #>  6 South Africa 2020-03-25 -30.6  22.9   709
-    #>  7 South Africa 2020-03-26 -30.6  22.9   927
-    #>  8 South Africa 2020-03-27 -30.6  22.9  1170
-    #>  9 South Africa 2020-03-28 -30.6  22.9  1187
-    #> 10 South Africa 2020-03-29 -30.6  22.9  1280
+    #>  1 South Africa 2020-03-21 -30.6  22.9   240
+    #>  2 South Africa 2020-03-22 -30.6  22.9   274
+    #>  3 South Africa 2020-03-23 -30.6  22.9   402
+    #>  4 South Africa 2020-03-24 -30.6  22.9   554
+    #>  5 South Africa 2020-03-25 -30.6  22.9   709
+    #>  6 South Africa 2020-03-26 -30.6  22.9   927
+    #>  7 South Africa 2020-03-27 -30.6  22.9  1170
+    #>  8 South Africa 2020-03-28 -30.6  22.9  1187
+    #>  9 South Africa 2020-03-29 -30.6  22.9  1280
+    #> 10 South Africa 2020-03-30 -30.6  22.9  1326
 
 ### Linear scale
 
@@ -58,35 +58,45 @@ indicates exponential growth.
 
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-## Regional distribution of Covid-19 cases
+    #> Warning: Removed 1 rows containing non-finite values (stat_smooth).
+    #> Warning: Removed 1 row(s) containing missing values (geom_path).
 
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
+## Regional distribution of Covid-19 cases
+
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 ![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
+![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 ## Number of deaths
 
-    #> # A tibble: 3 x 3
+    #> # A tibble: 4 x 3
     #> # Groups:   country [1]
     #>   country      date       deaths
     #>   <chr>        <date>      <dbl>
     #> 1 South Africa 2020-03-27      1
     #> 2 South Africa 2020-03-28      1
     #> 3 South Africa 2020-03-29      2
+    #> 4 South Africa 2020-03-30      3
 
 ### Linear scale
 
-![](README_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ### Logarithmic scale
 
-![](README_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ## New deaths
 
-![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ## Regional distribution of Covid-19 deaths
 
-![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+
+![](README_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+
+![](README_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->

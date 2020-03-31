@@ -32,6 +32,21 @@ suppressPackageStartupMessages({
   library(DT)
 })
 
+
+to_include <- c(
+  "South Africa",
+  "Italy",
+  "Iran",
+  "China",
+  "US",
+  "Japan",
+  "South Korea",
+  "Singapore",
+  "United Kingdom",
+  "Spain",
+  "Germany"
+)
+
 source("R/get_data.R")
 source("R/prep_data.R")
 source("R/plot_covid.R")
@@ -64,7 +79,7 @@ if (type == "cases"){
         "China", as.Date("2020-01-16"), 112, 32.8, 28,
         "China", as.Date("2020-01-17"), 112, 32.8, 41,
         "China", as.Date("2020-01-20"), 112, 32.8, 260
-        # "South Africa", as.Date("2020-03-23"), 22.9, -30.6, 402
+        # "South Africa", as.Date("2020-03-30"), 22.9, -30.6, 1326
       )
     ) %>% 
     group_by(country, date) %>% 
@@ -94,7 +109,10 @@ Using a linear scale it's easiest to see the relative scale of the worst affecte
 
 ```{r}
 dat %>%
-  prep_data_timeseries(threshold = imported_threshold) %>%
+  prep_data_timeseries(
+    threshold = imported_threshold, 
+    highlighted_countries = to_include
+  ) %>%
   plot(scale = "linear")
 ```
 
@@ -104,7 +122,10 @@ Using a logarithmic scale it's easier to discern whether the pandemic is still i
 
 ```{r}
 dat %>%
-  prep_data_timeseries(threshold = imported_threshold) %>%
+  prep_data_timeseries(
+    threshold = imported_threshold, 
+    highlighted_countries = to_include
+  ) %>%
   plot(scale = "log10")
 ```
 
@@ -116,16 +137,40 @@ get_covid19_data(type, aggregate = TRUE) %>%
   arrange(country, date) %>% 
   group_by(country) %>% 
   mutate(new = n - lag(n)) %>% 
-  filter(n > 0) %>%
-  filter(country == "South Africa") %>%
+  filter(
+    n > 0,
+    country %in% "South Africa"
+  ) %>%
+  # filter(country == "South Africa") %>%
   # filter(country == "Italy") %>% 
-  ggplot(aes(x = date, y = new)) +
+  ggplot(aes(x = date, y = new, group = country)) +
   geom_line() +
-  geom_smooth(method = "gam", formula = y ~ s(x, bs = "cs"), method.args = list(family = poisson, gamma = 2)) +
+  geom_smooth(method = "gam", formula = y ~ s(x, bs = "ts"), method.args = list(family = poisson, gamma = 4)) +
   scale_x_date(breaks = scales::breaks_width("7 days")) +
-  ggtitle("New cases reported in South Africa") + 
+  ggtitle("New cases reported") + 
   xlab(NULL) +
-  ylab(NULL)
+  ylab(NULL) +
+  facet_wrap(facets = "country", scales = "free")
+```
+```{r}
+get_covid19_data(type, aggregate = TRUE) %>% 
+  arrange(country, date) %>% 
+  group_by(country) %>% 
+  mutate(new = n - lag(n)) %>% 
+  filter(
+    n > 100,
+    country %in% to_include
+  ) %>%
+  # filter(country == "South Africa") %>%
+  # filter(country == "Italy") %>% 
+  ggplot(aes(x = date, y = new, group = country)) +
+  geom_line() +
+  geom_smooth(method = "gam", formula = y ~ s(x, bs = "ts"), method.args = list(family = poisson, gamma = 4)) +
+  scale_x_date(breaks = scales::breaks_width("7 days")) +
+  ggtitle("New cases reported") + 
+  xlab(NULL) +
+  ylab(NULL) +
+  facet_wrap(facets = "country", scales = "free")
 ```
 
 
@@ -177,7 +222,10 @@ dat %>%
 
 ```{r}
 dat %>%
-  prep_data_timeseries(threshold = imported_threshold) %>%
+  prep_data_timeseries(
+    threshold = imported_threshold, 
+    highlighted_countries = to_include
+  ) %>%
   plot(scale = "linear")
 ```
 
@@ -185,7 +233,10 @@ dat %>%
 
 ```{r}
 dat %>%
-  prep_data_timeseries(threshold = imported_threshold) %>%
+  prep_data_timeseries(
+    threshold = imported_threshold, 
+    highlighted_countries = to_include
+  ) %>%
   plot(scale = "log10")
 ```
 
@@ -217,3 +268,18 @@ dat %>%
 
 ```
 
+
+```{r, message = FALSE}
+dat %>%
+  prep_data_map() %>%
+  plot() +
+  coord_map(xlim = c(-15, 35), ylim = c(35, 65), clip = "on", projection = "conic", 50)
+```
+
+
+```{r, message = FALSE}
+dat %>%
+  prep_data_map() %>%
+  plot() +
+  coord_map(xlim = c(-30, 60), ylim = c(-35, 35))
+```

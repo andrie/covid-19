@@ -1,6 +1,6 @@
 # filter out World and International
 
-prep_data_timeseries <- function(dat, threshold = 30) {
+prep_data_timeseries <- function(dat, threshold = 30, highlighted_countries) {
   dat_f <-
     dat %>%
     filter(
@@ -12,18 +12,7 @@ prep_data_timeseries <- function(dat, threshold = 30) {
     mutate(days = as.numeric(date - min(date)))
 
   # shortlist of countries to highlight
-  to_include <- c(
-    "South Africa",
-    "Italy",
-    "Iran",
-    "China",
-    "US",
-    "Japan",
-    "South Korea",
-    "Singapore",
-    "United Kingdom",
-    "Spain"
-  )
+  to_include <- highlighted_countries
 
 
   dat_e <-
