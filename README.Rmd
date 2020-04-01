@@ -198,7 +198,7 @@ dat %>%
 
 
 
-## Number of deaths
+## Total number of deaths
 
 ```{r}
 type <- "deaths"
@@ -242,20 +242,25 @@ dat %>%
 
 ## New deaths
 
-```{r}
+```{r, warning=FALSE}
 get_covid19_data(type, aggregate = TRUE) %>% 
   arrange(country, date) %>% 
   group_by(country) %>% 
   mutate(new = n - lag(n)) %>% 
-  filter(n > 0) %>%
+  filter(
+    n > 10,
+    country %in% to_include
+  ) %>%
   # filter(country == "South Africa") %>%
-  filter(country == "Italy") %>%
-  ggplot(aes(x = date, y = new)) +
+  # filter(country == "Italy") %>% 
+  ggplot(aes(x = date, y = new, group = country)) +
   geom_line() +
-  geom_smooth(method = "gam", formula = y ~ s(x, bs = "cs"), method.args = list(family = poisson, gamma = 2)) +
-  ggtitle("New deaths reported in Italy") + 
+  geom_smooth(method = "gam", formula = y ~ s(x, bs = "ts"), method.args = list(family = poisson, gamma = 4)) +
+  scale_x_date(breaks = scales::breaks_width("7 days")) +
+  ggtitle("New deaths reported") + 
   xlab(NULL) +
-  ylab(NULL)
+  ylab(NULL) +
+  facet_wrap(facets = "country", scales = "free")
 ```
 
 
