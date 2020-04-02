@@ -19,7 +19,8 @@ Many others have done excellent analysis, and my attempts are specifically tryin
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  echo = FALSE
+  echo = FALSE,
+  warning = FALSE
 )
 ```
 
@@ -132,7 +133,7 @@ dat %>%
 
 ## New cases
 
-```{r}
+```{r, warning=FALSE}
 get_covid19_data(type, aggregate = TRUE) %>% 
   arrange(country, date) %>% 
   group_by(country) %>% 
@@ -228,6 +229,7 @@ dat %>%
   ) %>%
   plot(scale = "linear")
 ```
+
 
 ### Logarithmic scale
 

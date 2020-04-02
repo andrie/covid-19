@@ -19,7 +19,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-04-01 07:07:09
+Last updated at 2020-04-02 06:48:49
 
 ## Total cases
 
@@ -27,16 +27,16 @@ Last updated at 2020-04-01 07:07:09
     #> # Groups:   country [1]
     #>    country      date         lat  long cases
     #>    <chr>        <date>     <dbl> <dbl> <dbl>
-    #>  1 South Africa 2020-03-22 -30.6  22.9   274
-    #>  2 South Africa 2020-03-23 -30.6  22.9   402
-    #>  3 South Africa 2020-03-24 -30.6  22.9   554
-    #>  4 South Africa 2020-03-25 -30.6  22.9   709
-    #>  5 South Africa 2020-03-26 -30.6  22.9   927
-    #>  6 South Africa 2020-03-27 -30.6  22.9  1170
-    #>  7 South Africa 2020-03-28 -30.6  22.9  1187
-    #>  8 South Africa 2020-03-29 -30.6  22.9  1280
-    #>  9 South Africa 2020-03-30 -30.6  22.9  1326
-    #> 10 South Africa 2020-03-31 -30.6  22.9  1353
+    #>  1 South Africa 2020-03-23 -30.6  22.9   402
+    #>  2 South Africa 2020-03-24 -30.6  22.9   554
+    #>  3 South Africa 2020-03-25 -30.6  22.9   709
+    #>  4 South Africa 2020-03-26 -30.6  22.9   927
+    #>  5 South Africa 2020-03-27 -30.6  22.9  1170
+    #>  6 South Africa 2020-03-28 -30.6  22.9  1187
+    #>  7 South Africa 2020-03-29 -30.6  22.9  1280
+    #>  8 South Africa 2020-03-30 -30.6  22.9  1326
+    #>  9 South Africa 2020-03-31 -30.6  22.9  1353
+    #> 10 South Africa 2020-04-01 -30.6  22.9  1380
 
 ### Linear scale
 
@@ -57,10 +57,6 @@ indicates exponential growth.
 ## New cases
 
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
-
-    #> Warning: Removed 1 rows containing non-finite values (stat_smooth).
-    #> Warning: Removed 1 row(s) containing missing values (geom_path).
-
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ## Regional distribution of Covid-19 cases
@@ -72,7 +68,7 @@ indicates exponential growth.
 
 ## Total number of deaths
 
-    #> # A tibble: 5 x 3
+    #> # A tibble: 6 x 3
     #> # Groups:   country [1]
     #>   country      date       deaths
     #>   <chr>        <date>      <dbl>
@@ -81,6 +77,7 @@ indicates exponential growth.
     #> 3 South Africa 2020-03-29      2
     #> 4 South Africa 2020-03-30      3
     #> 5 South Africa 2020-03-31      5
+    #> 6 South Africa 2020-04-01      5
 
 ### Linear scale
 
