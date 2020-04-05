@@ -19,7 +19,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-04-04 05:12:41
+Last updated at 2020-04-05 05:20:52
 
 ## Total cases
 
@@ -27,16 +27,16 @@ Last updated at 2020-04-04 05:12:41
     #> # Groups:   country [1]
     #>    country      date         lat  long cases
     #>    <chr>        <date>     <dbl> <dbl> <dbl>
-    #>  1 South Africa 2020-03-25 -30.6  22.9   709
-    #>  2 South Africa 2020-03-26 -30.6  22.9   927
-    #>  3 South Africa 2020-03-27 -30.6  22.9  1170
-    #>  4 South Africa 2020-03-28 -30.6  22.9  1187
-    #>  5 South Africa 2020-03-29 -30.6  22.9  1280
-    #>  6 South Africa 2020-03-30 -30.6  22.9  1326
-    #>  7 South Africa 2020-03-31 -30.6  22.9  1353
-    #>  8 South Africa 2020-04-01 -30.6  22.9  1380
-    #>  9 South Africa 2020-04-02 -30.6  22.9  1462
-    #> 10 South Africa 2020-04-03 -30.6  22.9  1505
+    #>  1 South Africa 2020-03-26 -30.6  22.9   927
+    #>  2 South Africa 2020-03-27 -30.6  22.9  1170
+    #>  3 South Africa 2020-03-28 -30.6  22.9  1187
+    #>  4 South Africa 2020-03-29 -30.6  22.9  1280
+    #>  5 South Africa 2020-03-30 -30.6  22.9  1326
+    #>  6 South Africa 2020-03-31 -30.6  22.9  1353
+    #>  7 South Africa 2020-04-01 -30.6  22.9  1380
+    #>  8 South Africa 2020-04-02 -30.6  22.9  1462
+    #>  9 South Africa 2020-04-03 -30.6  22.9  1505
+    #> 10 South Africa 2020-04-04 -30.6  22.9  1585
 
 ### Linear scale
 
@@ -68,7 +68,7 @@ indicates exponential growth.
 
 ## Total number of deaths
 
-    #> # A tibble: 8 x 3
+    #> # A tibble: 9 x 3
     #> # Groups:   country [1]
     #>   country      date       deaths
     #>   <chr>        <date>      <dbl>
@@ -80,6 +80,7 @@ indicates exponential growth.
     #> 6 South Africa 2020-04-01      5
     #> 7 South Africa 2020-04-02      5
     #> 8 South Africa 2020-04-03      9
+    #> 9 South Africa 2020-04-04      9
 
 ### Linear scale
 
