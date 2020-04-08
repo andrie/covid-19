@@ -7,12 +7,14 @@ output: github_document
 # covid-19
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-This is another analysis of the outbreak of [Coronavirus / Covid-19 disease](https://en.wikipedia.org/wiki/Coronavirus_disease_2019).
+This is another analysis of the outbreak of [Coronavirus / Covid-19
+disease](https://en.wikipedia.org/wiki/Coronavirus_disease_2019).
 
-Many others have done excellent analysis, and my attempts are specifically trying to add flavour to the statistics in South Africa.
-
+Many others have done excellent analysis, and my attempts are specifically
+trying to add flavour to the statistics in South Africa.
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -22,7 +24,6 @@ knitr::opts_chunk$set(
   warning = FALSE
 )
 ```
-
 
 ```{r, warning=FALSE}
 suppressPackageStartupMessages({
@@ -52,12 +53,11 @@ source("R/prep_data.R")
 source("R/plot_covid.R")
 ```
 
-
-
-
 ## Data source
 
-The data source is [a repository maintained by Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19). The data is updated once per day.
+The data source is [a repository maintained by Johns Hopkins
+University](https://github.com/CSSEGISandData/COVID-19). The data is updated
+once per day.
 
 Last updated at `r Sys.time()`
 
@@ -91,8 +91,6 @@ if (type == "cases"){
 }
 ```
 
-
-
 ```{r}
 dat %>%
   filter(country == "South Africa") %>%
@@ -105,7 +103,9 @@ dat %>%
 
 ### Linear scale
 
-Using a linear scale it's easiest to see the relative scale of the worst affected countries, but it's hard to distinguish the countries that were affected later.
+Using a linear scale it's easiest to see the relative scale of the worst
+affected countries, but it's hard to distinguish the countries that were
+affected later.
 
 ```{r}
 dat %>%
@@ -118,7 +118,9 @@ dat %>%
 
 ### Logarithmic scale
 
-Using a logarithmic scale it's easier to discern whether the pandemic is still in the exponential growth phase.  On this scale, a straight line indicates exponential growth.
+Using a logarithmic scale it's easier to discern whether the pandemic is still
+in the exponential growth phase. On this scale, a straight line indicates
+exponential growth.
 
 ```{r}
 dat %>%
@@ -128,7 +130,6 @@ dat %>%
   ) %>%
   plot(scale = "log10")
 ```
-
 
 ## New cases
 
@@ -152,6 +153,7 @@ get_covid19_data(type, aggregate = TRUE) %>%
   ylab(NULL) +
   facet_wrap(facets = "country", scales = "free")
 ```
+
 ```{r}
 get_covid19_data(type, aggregate = TRUE) %>% 
   arrange(country, date) %>% 
@@ -173,7 +175,6 @@ get_covid19_data(type, aggregate = TRUE) %>%
   facet_wrap(facets = "country", scales = "free")
 ```
 
-
 ## Regional distribution of Covid-19 cases
 
 ```{r}
@@ -181,13 +182,13 @@ dat %>%
   prep_data_map() %>%
   plot()
 ```
+
 ```{r, message = FALSE}
 dat %>%
   prep_data_map() %>%
   plot() +
   coord_map(xlim = c(-15, 35), ylim = c(35, 65), clip = "on", projection = "conic", 50)
 ```
-
 
 ```{r, message = FALSE}
 dat %>%
@@ -196,8 +197,6 @@ dat %>%
   coord_map(xlim = c(-30, 60), ylim = c(-35, 35))
 ```
 
-
-
 ## Total number of deaths
 
 ```{r}
@@ -205,7 +204,6 @@ type <- "deaths"
 imported_threshold <- if (type == "cases") 30 else 10
 
 dat <- get_covid19_data(type)
-
 ```
 
 ```{r}
@@ -228,7 +226,6 @@ dat %>%
   ) %>%
   plot(scale = "linear")
 ```
-
 
 ### Logarithmic scale
 
@@ -264,16 +261,13 @@ get_covid19_data(type, aggregate = TRUE) %>%
   facet_wrap(facets = "country", scales = "free")
 ```
 
-
 ## Regional distribution of Covid-19 deaths
 
 ```{r}
 dat %>%
   prep_data_map() %>%
   plot()
-
 ```
-
 
 ```{r, message = FALSE}
 dat %>%
@@ -281,7 +275,6 @@ dat %>%
   plot() +
   coord_map(xlim = c(-15, 35), ylim = c(35, 65), clip = "on", projection = "conic", 50)
 ```
-
 
 ```{r, message = FALSE}
 dat %>%
