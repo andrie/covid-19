@@ -61,7 +61,6 @@ once per day.
 
 Last updated at `r Sys.time()`
 
-
 ## Total cases
 
 ```{r}
@@ -100,6 +99,7 @@ dat %>%
   arrange(country, date) %>% 
   tail(10)
 ```
+
 
 ### Linear scale
 
