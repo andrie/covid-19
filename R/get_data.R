@@ -1,20 +1,3 @@
-# get_covid19_data <- function(filename = "data/full_data.csv") {
-#
-# if (!dir.exists("data")) dir.create("data")
-# if (
-#   !file.exists(filename) ||
-#   file.info(filename)$mtime < (Sys.time() - 6*3600)) {
-#   message("Downloading data")
-#   download.file("https://covid.ourworldindata.org/data/full_data.csv",
-#                 destfile = filename)
-# }
-#
-#   dat <-
-#     readr::read_csv(filename, col_types = "Dcdddd")
-# }
-
-
-
 library(pins)
 
 # https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv

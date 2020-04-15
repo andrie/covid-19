@@ -64,6 +64,7 @@ Last updated at `r Sys.time()`
 
 ## Total cases
 
+
 ```{r}
 type <- "cases"
 imported_threshold <- if (type == "cases") 30 else 10
