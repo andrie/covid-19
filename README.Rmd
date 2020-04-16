@@ -46,7 +46,8 @@ to_include <- c(
   "Singapore",
   "United Kingdom",
   "Spain",
-  "Germany"
+  "Germany",
+  "Sweden"
 )
 
 source("R/get_data.R")
