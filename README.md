@@ -19,7 +19,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-04-15 08:23:40
+Last updated at 2020-04-16 05:10:09
 
 ## Total cases
 
@@ -27,16 +27,16 @@ Last updated at 2020-04-15 08:23:40
     #> # Groups:   country [1]
     #>    country      date         lat  long cases
     #>    <chr>        <date>     <dbl> <dbl> <dbl>
-    #>  1 South Africa 2020-04-05 -30.6  22.9  1655
-    #>  2 South Africa 2020-04-06 -30.6  22.9  1686
-    #>  3 South Africa 2020-04-07 -30.6  22.9  1749
-    #>  4 South Africa 2020-04-08 -30.6  22.9  1845
-    #>  5 South Africa 2020-04-09 -30.6  22.9  1934
-    #>  6 South Africa 2020-04-10 -30.6  22.9  2003
-    #>  7 South Africa 2020-04-11 -30.6  22.9  2028
-    #>  8 South Africa 2020-04-12 -30.6  22.9  2173
-    #>  9 South Africa 2020-04-13 -30.6  22.9  2272
-    #> 10 South Africa 2020-04-14 -30.6  22.9  2415
+    #>  1 South Africa 2020-04-06 -30.6  22.9  1686
+    #>  2 South Africa 2020-04-07 -30.6  22.9  1749
+    #>  3 South Africa 2020-04-08 -30.6  22.9  1845
+    #>  4 South Africa 2020-04-09 -30.6  22.9  1934
+    #>  5 South Africa 2020-04-10 -30.6  22.9  2003
+    #>  6 South Africa 2020-04-11 -30.6  22.9  2028
+    #>  7 South Africa 2020-04-12 -30.6  22.9  2173
+    #>  8 South Africa 2020-04-13 -30.6  22.9  2272
+    #>  9 South Africa 2020-04-14 -30.6  22.9  2415
+    #> 10 South Africa 2020-04-15 -30.6  22.9  2506
 
 ### Linear scale
 
@@ -74,16 +74,16 @@ indicates exponential growth.
     #> # Groups:   country [1]
     #>    country      date       deaths
     #>    <chr>        <date>      <dbl>
-    #>  1 South Africa 2020-04-05     11
-    #>  2 South Africa 2020-04-06     12
-    #>  3 South Africa 2020-04-07     13
-    #>  4 South Africa 2020-04-08     18
-    #>  5 South Africa 2020-04-09     18
-    #>  6 South Africa 2020-04-10     24
-    #>  7 South Africa 2020-04-11     25
-    #>  8 South Africa 2020-04-12     25
-    #>  9 South Africa 2020-04-13     27
-    #> 10 South Africa 2020-04-14     27
+    #>  1 South Africa 2020-04-06     12
+    #>  2 South Africa 2020-04-07     13
+    #>  3 South Africa 2020-04-08     18
+    #>  4 South Africa 2020-04-09     18
+    #>  5 South Africa 2020-04-10     24
+    #>  6 South Africa 2020-04-11     25
+    #>  7 South Africa 2020-04-12     25
+    #>  8 South Africa 2020-04-13     27
+    #>  9 South Africa 2020-04-14     27
+    #> 10 South Africa 2020-04-15     34
 
 ### Linear scale
 
