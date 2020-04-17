@@ -1,4 +1,6 @@
 
+
+
 plot.covid19_ts <- function(data, scale = c("linear", "log10"), ylim = NA){
   scale <- match.arg(scale)
 
@@ -28,7 +30,9 @@ plot.covid19_ts <- function(data, scale = c("linear", "log10"), ylim = NA){
       size = 5,
       direction = "y"
       ) +
-    scale_x_continuous(breaks = seq(from = 0, by = 7, to = 70)) +
+    scale_x_continuous(breaks = function(x) {
+      seq(from = 0, to = max(x), by = 7)
+    }) +
     guides(col = FALSE) +
     ggtitle(glue::glue("Total Covid-19 {type}")) +
     xlab(glue::glue("Number of days after {threshold}th case"))
@@ -40,7 +44,7 @@ plot.covid19_ts <- function(data, scale = c("linear", "log10"), ylim = NA){
         labels = scales::label_number()
       )
     } else {
-      scale_y_continuous(limits = c(0, ylim))
+      scale_y_continuous(limits = c(0, ylim), labels = scales::label_number())
     }
 
   p +
