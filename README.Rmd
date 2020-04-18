@@ -124,6 +124,7 @@ Using a logarithmic scale it's easier to discern whether the pandemic is still
 in the exponential growth phase. On this scale, a straight line indicates
 exponential growth.
 
+
 ```{r}
 dat %>%
   prep_data_timeseries(
