@@ -19,7 +19,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-04-18 05:51:12
+Last updated at 2020-04-19 15:39:40
 
 ## Total cases
 
@@ -27,16 +27,16 @@ Last updated at 2020-04-18 05:51:12
     #> # Groups:   country [1]
     #>    country      date         lat  long cases
     #>    <chr>        <date>     <dbl> <dbl> <dbl>
-    #>  1 South Africa 2020-04-08 -30.6  22.9  1845
-    #>  2 South Africa 2020-04-09 -30.6  22.9  1934
-    #>  3 South Africa 2020-04-10 -30.6  22.9  2003
-    #>  4 South Africa 2020-04-11 -30.6  22.9  2028
-    #>  5 South Africa 2020-04-12 -30.6  22.9  2173
-    #>  6 South Africa 2020-04-13 -30.6  22.9  2272
-    #>  7 South Africa 2020-04-14 -30.6  22.9  2415
-    #>  8 South Africa 2020-04-15 -30.6  22.9  2506
-    #>  9 South Africa 2020-04-16 -30.6  22.9  2605
-    #> 10 South Africa 2020-04-17 -30.6  22.9  2783
+    #>  1 South Africa 2020-04-09 -30.6  22.9  1934
+    #>  2 South Africa 2020-04-10 -30.6  22.9  2003
+    #>  3 South Africa 2020-04-11 -30.6  22.9  2028
+    #>  4 South Africa 2020-04-12 -30.6  22.9  2173
+    #>  5 South Africa 2020-04-13 -30.6  22.9  2272
+    #>  6 South Africa 2020-04-14 -30.6  22.9  2415
+    #>  7 South Africa 2020-04-15 -30.6  22.9  2506
+    #>  8 South Africa 2020-04-16 -30.6  22.9  2605
+    #>  9 South Africa 2020-04-17 -30.6  22.9  2783
+    #> 10 South Africa 2020-04-18 -30.6  22.9  3034
 
 ### Linear scale
 
@@ -74,16 +74,16 @@ indicates exponential growth.
     #> # Groups:   country [1]
     #>    country      date       deaths
     #>    <chr>        <date>      <dbl>
-    #>  1 South Africa 2020-04-08     18
-    #>  2 South Africa 2020-04-09     18
-    #>  3 South Africa 2020-04-10     24
-    #>  4 South Africa 2020-04-11     25
-    #>  5 South Africa 2020-04-12     25
-    #>  6 South Africa 2020-04-13     27
-    #>  7 South Africa 2020-04-14     27
-    #>  8 South Africa 2020-04-15     34
-    #>  9 South Africa 2020-04-16     48
-    #> 10 South Africa 2020-04-17     50
+    #>  1 South Africa 2020-04-09     18
+    #>  2 South Africa 2020-04-10     24
+    #>  3 South Africa 2020-04-11     25
+    #>  4 South Africa 2020-04-12     25
+    #>  5 South Africa 2020-04-13     27
+    #>  6 South Africa 2020-04-14     27
+    #>  7 South Africa 2020-04-15     34
+    #>  8 South Africa 2020-04-16     48
+    #>  9 South Africa 2020-04-17     50
+    #> 10 South Africa 2020-04-18     52
 
 ### Linear scale
 
@@ -94,9 +94,6 @@ indicates exponential growth.
 ![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ## New deaths
-
-    #> geom_path: Each group consists of only one observation. Do you need to adjust
-    #> the group aesthetic?
 
 ![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
