@@ -18,7 +18,6 @@ disease](https://en.wikipedia.org/wiki/Coronavirus_disease_2019).
 Many others have done excellent analysis, and my attempts are specifically trying to add flavour to the statistics in South Africa.
 
 
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
