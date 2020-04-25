@@ -19,7 +19,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-04-24 07:10:21
+Last updated at 2020-04-25 05:29:13
 
 ## Total cases
 

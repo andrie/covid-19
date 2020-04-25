@@ -8,8 +8,6 @@ output: github_document
 
 
 <!-- badges: start -->
-
-
 <!-- badges: end -->
 
 This is another analysis of the outbreak of [Coronavirus / Covid-19
