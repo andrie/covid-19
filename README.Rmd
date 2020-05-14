@@ -146,12 +146,11 @@ get_covid19_data(type, aggregate = TRUE) %>%
     country %in% "South Africa",
     new >= 0
   ) %>%
-  # filter(country == "South Africa") %>%
-  # filter(country == "Italy") %>% 
   ggplot(aes(x = date, y = new, group = country)) +
   geom_line() +
-  geom_smooth(method = "gam", formula = y ~ s(x, bs = "ts"), method.args = list(family = poisson, gamma = 4)) +
-  scale_x_date(breaks = scales::breaks_width("7 days")) +
+  geom_smooth(method = "gam", formula = y ~ s(x, bs = "ts"), 
+              method.args = list(family = poisson, gamma = 4)) +
+  scale_x_date(date_breaks = "14 days", guide = guide_axis(n.dodge = 2)) +
   ggtitle("New cases reported") + 
   xlab(NULL) +
   ylab(NULL) +
@@ -168,12 +167,11 @@ get_covid19_data(type, aggregate = TRUE) %>%
     country %in% to_include,
     new >= 0
   ) %>%
-  # filter(country == "South Africa") %>%
-  # filter(country == "Italy") %>% 
   ggplot(aes(x = date, y = new, group = country)) +
   geom_line() +
-  geom_smooth(method = "gam", formula = y ~ s(x, bs = "ts"), method.args = list(family = poisson, gamma = 4)) +
-  scale_x_date(breaks = scales::breaks_width("7 days")) +
+  geom_smooth(method = "gam", formula = y ~ s(x, bs = "ts"), 
+              method.args = list(family = poisson, gamma = 4)) +
+  scale_x_date(date_breaks = "1 month", guide = guide_axis(n.dodge = 2)) +
   ggtitle("New cases reported") + 
   xlab(NULL) +
   ylab(NULL) +
