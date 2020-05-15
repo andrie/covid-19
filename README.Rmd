@@ -15,6 +15,7 @@ disease](https://en.wikipedia.org/wiki/Coronavirus_disease_2019).
 Many others have done excellent analysis, and my attempts are specifically trying to add flavour to the statistics in South Africa.
 
 
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -150,7 +151,7 @@ get_covid19_data(type, aggregate = TRUE) %>%
   geom_line() +
   geom_smooth(method = "gam", formula = y ~ s(x, bs = "ts"), 
               method.args = list(family = poisson, gamma = 4)) +
-  scale_x_date(date_breaks = "14 days", guide = guide_axis(n.dodge = 2)) +
+  scale_x_date(date_breaks = "1 month", guide = guide_axis(n.dodge = 2)) +
   ggtitle("New cases reported") + 
   xlab(NULL) +
   ylab(NULL) +
