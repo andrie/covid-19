@@ -65,7 +65,8 @@ prep_data_map <- function(dat) {
       date = max(date),
       long = weighted.mean(long, n),
       lat = weighted.mean(lat, n),
-      n = sum(n)
+      n = sum(n),
+      .groups = "drop_last"
     )
 
   class(z) <- c("covid19_map", class(z))

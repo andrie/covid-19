@@ -49,7 +49,8 @@ get_covid19_data <- function(type = c("cases", "deaths", "recovered"), aggregate
           # date = max(date),
           long = weighted.mean(long, n),
           lat = weighted.mean(lat, n),
-          n = sum(n)
+          n = sum(n),
+          .group = "drop_last"
         )
     } else {
       dat
