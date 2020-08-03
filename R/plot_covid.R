@@ -31,7 +31,7 @@ plot.covid19_ts <- function(data, scale = c("linear", "log10"), ylim = NA){
       direction = "y"
       ) +
     scale_x_continuous(breaks = function(x) {
-      seq(from = 0, to = max(x), by = 7)
+      seq(from = 0, to = max(x), by = 30)
     }) +
     guides(col = FALSE) +
     ggtitle(glue::glue("Total Covid-19 {type}")) +

@@ -19,11 +19,9 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-08-03 05:34:37
+Last updated at 2020-08-03 06:36:00
 
 ## Total cases
-
-    #> `summarise()` regrouping output by 'country' (override with `.groups` argument)
 
     #> # A tibble: 10 x 5
     #> # Groups:   country [1]
@@ -58,11 +56,7 @@ indicates exponential growth.
 
 ## New cases
 
-    #> `summarise()` regrouping output by 'country' (override with `.groups` argument)
-
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
-
-    #> `summarise()` regrouping output by 'country' (override with `.groups` argument)
 
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
@@ -70,13 +64,7 @@ indicates exponential growth.
 
 ![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
-![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
-
-![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
-
 ## Total number of deaths
-
-    #> `summarise()` regrouping output by 'country' (override with `.groups` argument)
 
     #> # A tibble: 10 x 3
     #> # Groups:   country [1]
@@ -103,14 +91,8 @@ indicates exponential growth.
 
 ## New deaths
 
-    #> `summarise()` regrouping output by 'country' (override with `.groups` argument)
-
 ![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ## Regional distribution of Covid-19 deaths
 
 ![](README_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
-
-![](README_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
-
-![](README_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->

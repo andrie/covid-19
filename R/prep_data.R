@@ -61,7 +61,7 @@ prep_data_map <- function(dat) {
     filter(n > 0) %>%
     group_by(country) %>%
     filter(date == max(date)) %>%
-    summarise(
+    summarize(
       date = max(date),
       long = weighted.mean(long, n),
       lat = weighted.mean(lat, n),

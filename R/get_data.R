@@ -16,7 +16,6 @@ get_covid19_data <- function(type = c("cases", "deaths", "recovered"), aggregate
     deaths = "time_series_covid19_deaths_global.csv"
     # recovered = "time_series_19-covid-Recovered.csv"
   )
-  # browser()
   dat <-
     paste0(url, file) %>%
     pins::pin() %>%
@@ -44,13 +43,11 @@ get_covid19_data <- function(type = c("cases", "deaths", "recovered"), aggregate
     if (aggregate) {
       dat %>%
         group_by(country, date) %>%
-        # filter(date == max(date)) %>%
-        summarise(
-          # date = max(date),
+        summarize(
           long = weighted.mean(long, n),
           lat = weighted.mean(lat, n),
           n = sum(n),
-          .group = "drop_last"
+          .groups = "drop_last"
         )
     } else {
       dat
