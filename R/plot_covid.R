@@ -27,7 +27,7 @@ plot.covid19_ts <- function(data, scale = c("linear", "log10"), ylim = NA){
       data = data[["dat_l"]],
       aes(label = country, color = country),
       hjust = 0,
-      size = 5,
+      size = 3,
       direction = "y"
       ) +
     scale_x_continuous(breaks = function(x) {
