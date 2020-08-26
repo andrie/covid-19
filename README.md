@@ -19,7 +19,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-08-25 06:26:05
+Last updated at 2020-08-26 06:05:33
 
 ## Total cases
 
@@ -27,16 +27,16 @@ Last updated at 2020-08-25 06:26:05
     #> # Groups:   country [1]
     #>    country      date         lat  long  cases
     #>    <chr>        <date>     <dbl> <dbl>  <dbl>
-    #>  1 South Africa 2020-08-15 -30.6  22.9 583653
-    #>  2 South Africa 2020-08-16 -30.6  22.9 587345
-    #>  3 South Africa 2020-08-17 -30.6  22.9 589886
-    #>  4 South Africa 2020-08-18 -30.6  22.9 592144
-    #>  5 South Africa 2020-08-19 -30.6  22.9 596060
-    #>  6 South Africa 2020-08-20 -30.6  22.9 599940
-    #>  7 South Africa 2020-08-21 -30.6  22.9 603338
-    #>  8 South Africa 2020-08-22 -30.6  22.9 607045
-    #>  9 South Africa 2020-08-23 -30.6  22.9 609773
-    #> 10 South Africa 2020-08-24 -30.6  22.9 611450
+    #>  1 South Africa 2020-08-16 -30.6  22.9 587345
+    #>  2 South Africa 2020-08-17 -30.6  22.9 589886
+    #>  3 South Africa 2020-08-18 -30.6  22.9 592144
+    #>  4 South Africa 2020-08-19 -30.6  22.9 596060
+    #>  5 South Africa 2020-08-20 -30.6  22.9 599940
+    #>  6 South Africa 2020-08-21 -30.6  22.9 603338
+    #>  7 South Africa 2020-08-22 -30.6  22.9 607045
+    #>  8 South Africa 2020-08-23 -30.6  22.9 609773
+    #>  9 South Africa 2020-08-24 -30.6  22.9 611450
+    #> 10 South Africa 2020-08-25 -30.6  22.9 613017
 
 ### Linear scale
 
@@ -70,16 +70,16 @@ indicates exponential growth.
     #> # Groups:   country [1]
     #>    country      date       deaths
     #>    <chr>        <date>      <dbl>
-    #>  1 South Africa 2020-08-15  11677
-    #>  2 South Africa 2020-08-16  11839
-    #>  3 South Africa 2020-08-17  11982
-    #>  4 South Africa 2020-08-18  12264
-    #>  5 South Africa 2020-08-19  12423
-    #>  6 South Africa 2020-08-20  12618
-    #>  7 South Africa 2020-08-21  12843
-    #>  8 South Africa 2020-08-22  12987
-    #>  9 South Africa 2020-08-23  13059
-    #> 10 South Africa 2020-08-24  13159
+    #>  1 South Africa 2020-08-16  11839
+    #>  2 South Africa 2020-08-17  11982
+    #>  3 South Africa 2020-08-18  12264
+    #>  4 South Africa 2020-08-19  12423
+    #>  5 South Africa 2020-08-20  12618
+    #>  6 South Africa 2020-08-21  12843
+    #>  7 South Africa 2020-08-22  12987
+    #>  8 South Africa 2020-08-23  13059
+    #>  9 South Africa 2020-08-24  13159
+    #> 10 South Africa 2020-08-25  13308
 
 ### Linear scale
 
