@@ -20,7 +20,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-11-28 07:46:59
+Last updated at 2020-11-29 18:03:47
 
 Total cases
 -----------
@@ -29,16 +29,16 @@ Total cases
     #> # Groups:   country [1]
     #>    country      date         lat  long  cases
     #>    <chr>        <date>     <dbl> <dbl>  <dbl>
-    #>  1 South Africa 2020-11-18 -30.6  22.9 757144
-    #>  2 South Africa 2020-11-19 -30.6  22.9 759658
-    #>  3 South Africa 2020-11-20 -30.6  22.9 762763
-    #>  4 South Africa 2020-11-21 -30.6  22.9 765409
-    #>  5 South Africa 2020-11-22 -30.6  22.9 767679
-    #>  6 South Africa 2020-11-23 -30.6  22.9 769759
-    #>  7 South Africa 2020-11-24 -30.6  22.9 772252
-    #>  8 South Africa 2020-11-25 -30.6  22.9 775502
-    #>  9 South Africa 2020-11-26 -30.6  22.9 778571
-    #> 10 South Africa 2020-11-27 -30.6  22.9 781941
+    #>  1 South Africa 2020-11-19 -30.6  22.9 759658
+    #>  2 South Africa 2020-11-20 -30.6  22.9 762763
+    #>  3 South Africa 2020-11-21 -30.6  22.9 765409
+    #>  4 South Africa 2020-11-22 -30.6  22.9 767679
+    #>  5 South Africa 2020-11-23 -30.6  22.9 769759
+    #>  6 South Africa 2020-11-24 -30.6  22.9 772252
+    #>  7 South Africa 2020-11-25 -30.6  22.9 775502
+    #>  8 South Africa 2020-11-26 -30.6  22.9 778571
+    #>  9 South Africa 2020-11-27 -30.6  22.9 781941
+    #> 10 South Africa 2020-11-28 -30.6  22.9 785139
 
 ### Linear scale
 
@@ -75,16 +75,16 @@ Total number of deaths
     #> # Groups:   country [1]
     #>    country      date       deaths
     #>    <chr>        <date>      <dbl>
-    #>  1 South Africa 2020-11-18  20556
-    #>  2 South Africa 2020-11-19  20671
-    #>  3 South Africa 2020-11-20  20759
-    #>  4 South Africa 2020-11-21  20845
-    #>  5 South Africa 2020-11-22  20903
-    #>  6 South Africa 2020-11-23  20968
-    #>  7 South Africa 2020-11-24  21083
-    #>  8 South Africa 2020-11-25  21201
-    #>  9 South Africa 2020-11-26  21289
-    #> 10 South Africa 2020-11-27  21378
+    #>  1 South Africa 2020-11-19  20671
+    #>  2 South Africa 2020-11-20  20759
+    #>  3 South Africa 2020-11-21  20845
+    #>  4 South Africa 2020-11-22  20903
+    #>  5 South Africa 2020-11-23  20968
+    #>  6 South Africa 2020-11-24  21083
+    #>  7 South Africa 2020-11-25  21201
+    #>  8 South Africa 2020-11-26  21289
+    #>  9 South Africa 2020-11-27  21378
+    #> 10 South Africa 2020-11-28  21439
 
 ### Linear scale
 
