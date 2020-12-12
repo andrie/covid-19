@@ -1,8 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-covid-19
-========
+# covid-19
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -13,32 +12,30 @@ disease](https://en.wikipedia.org/wiki/Coronavirus_disease_2019).
 Many others have done excellent analysis, and my attempts are
 specifically trying to add flavour to the statistics in South Africa.
 
-Data source
------------
+## Data source
 
 The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2020-11-29 18:03:47
+Last updated at 2020-12-12 07:57:49
 
-Total cases
------------
+## Total cases
 
     #> # A tibble: 10 x 5
     #> # Groups:   country [1]
     #>    country      date         lat  long  cases
     #>    <chr>        <date>     <dbl> <dbl>  <dbl>
-    #>  1 South Africa 2020-11-19 -30.6  22.9 759658
-    #>  2 South Africa 2020-11-20 -30.6  22.9 762763
-    #>  3 South Africa 2020-11-21 -30.6  22.9 765409
-    #>  4 South Africa 2020-11-22 -30.6  22.9 767679
-    #>  5 South Africa 2020-11-23 -30.6  22.9 769759
-    #>  6 South Africa 2020-11-24 -30.6  22.9 772252
-    #>  7 South Africa 2020-11-25 -30.6  22.9 775502
-    #>  8 South Africa 2020-11-26 -30.6  22.9 778571
-    #>  9 South Africa 2020-11-27 -30.6  22.9 781941
-    #> 10 South Africa 2020-11-28 -30.6  22.9 785139
+    #>  1 South Africa 2020-12-02 -30.6  22.9 796472
+    #>  2 South Africa 2020-12-03 -30.6  22.9 800872
+    #>  3 South Africa 2020-12-04 -30.6  22.9 805804
+    #>  4 South Africa 2020-12-05 -30.6  22.9 810449
+    #>  5 South Africa 2020-12-06 -30.6  22.9 814565
+    #>  6 South Africa 2020-12-07 -30.6  22.9 817878
+    #>  7 South Africa 2020-12-08 -30.6  22.9 821889
+    #>  8 South Africa 2020-12-09 -30.6  22.9 828598
+    #>  9 South Africa 2020-12-10 -30.6  22.9 836764
+    #> 10 South Africa 2020-12-11 -30.6  22.9 845083
 
 ### Linear scale
 
@@ -56,35 +53,32 @@ indicates exponential growth.
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
-New cases
----------
+## New cases
 
 ![](README_files/figure-gfm/new-cases-1.png)<!-- -->
 
 ![](README_files/figure-gfm/new-cases-plot-1.png)<!-- -->
 
-Regional distribution of Covid-19 cases
----------------------------------------
+## Regional distribution of Covid-19 cases
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-Total number of deaths
-----------------------
+## Total number of deaths
 
     #> # A tibble: 10 x 3
     #> # Groups:   country [1]
     #>    country      date       deaths
     #>    <chr>        <date>      <dbl>
-    #>  1 South Africa 2020-11-19  20671
-    #>  2 South Africa 2020-11-20  20759
-    #>  3 South Africa 2020-11-21  20845
-    #>  4 South Africa 2020-11-22  20903
-    #>  5 South Africa 2020-11-23  20968
-    #>  6 South Africa 2020-11-24  21083
-    #>  7 South Africa 2020-11-25  21201
-    #>  8 South Africa 2020-11-26  21289
-    #>  9 South Africa 2020-11-27  21378
-    #> 10 South Africa 2020-11-28  21439
+    #>  1 South Africa 2020-12-02  21709
+    #>  2 South Africa 2020-12-03  21803
+    #>  3 South Africa 2020-12-04  21963
+    #>  4 South Africa 2020-12-05  22067
+    #>  5 South Africa 2020-12-06  22206
+    #>  6 South Africa 2020-12-07  22249
+    #>  7 South Africa 2020-12-08  22432
+    #>  8 South Africa 2020-12-09  22574
+    #>  9 South Africa 2020-12-10  22747
+    #> 10 South Africa 2020-12-11  22952
 
 ### Linear scale
 
@@ -94,12 +88,10 @@ Total number of deaths
 
 ![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
-New deaths
-----------
+## New deaths
 
 ![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
-Regional distribution of Covid-19 deaths
-----------------------------------------
+## Regional distribution of Covid-19 deaths
 
 ![](README_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
