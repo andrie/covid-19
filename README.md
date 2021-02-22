@@ -18,7 +18,7 @@ The data source is [a repository maintained by Johns Hopkins
 University](https://github.com/CSSEGISandData/COVID-19). The data is
 updated once per day.
 
-Last updated at 2021-02-08 07:18:54
+Last updated at 2021-02-22 07:18:10
 
 ## Total cases
 
@@ -26,16 +26,16 @@ Last updated at 2021-02-08 07:18:54
     #> # Groups:   country [1]
     #>    country      date         lat  long   cases
     #>    <chr>        <date>     <dbl> <dbl>   <dbl>
-    #>  1 South Africa 2021-01-29 -30.6  22.9 1443939
-    #>  2 South Africa 2021-01-30 -30.6  22.9 1449236
-    #>  3 South Africa 2021-01-31 -30.6  22.9 1453761
-    #>  4 South Africa 2021-02-01 -30.6  22.9 1456309
-    #>  5 South Africa 2021-02-02 -30.6  22.9 1458958
-    #>  6 South Africa 2021-02-03 -30.6  22.9 1463016
-    #>  7 South Africa 2021-02-04 -30.6  22.9 1466767
-    #>  8 South Africa 2021-02-05 -30.6  22.9 1470516
-    #>  9 South Africa 2021-02-06 -30.6  22.9 1473700
-    #> 10 South Africa 2021-02-07 -30.6  22.9 1476135
+    #>  1 South Africa 2021-02-12 -30.6  22.9 1487681
+    #>  2 South Africa 2021-02-13 -30.6  22.9 1490063
+    #>  3 South Africa 2021-02-14 -30.6  22.9 1491807
+    #>  4 South Africa 2021-02-15 -30.6  22.9 1492909
+    #>  5 South Africa 2021-02-16 -30.6  22.9 1494119
+    #>  6 South Africa 2021-02-17 -30.6  22.9 1496439
+    #>  7 South Africa 2021-02-18 -30.6  22.9 1498766
+    #>  8 South Africa 2021-02-19 -30.6  22.9 1500677
+    #>  9 South Africa 2021-02-20 -30.6  22.9 1502367
+    #> 10 South Africa 2021-02-21 -30.6  22.9 1503796
 
 ### Linear scale
 
@@ -69,16 +69,16 @@ indicates exponential growth.
     #> # Groups:   country [1]
     #>    country      date       deaths
     #>    <chr>        <date>      <dbl>
-    #>  1 South Africa 2021-01-29  43633
-    #>  2 South Africa 2021-01-30  43951
-    #>  3 South Africa 2021-01-31  44164
-    #>  4 South Africa 2021-02-01  44399
-    #>  5 South Africa 2021-02-02  44946
-    #>  6 South Africa 2021-02-03  45344
-    #>  7 South Africa 2021-02-04  45605
-    #>  8 South Africa 2021-02-05  45902
-    #>  9 South Africa 2021-02-06  46180
-    #> 10 South Africa 2021-02-07  46290
+    #>  1 South Africa 2021-02-12  47670
+    #>  2 South Africa 2021-02-13  47821
+    #>  3 South Africa 2021-02-14  47899
+    #>  4 South Africa 2021-02-15  48094
+    #>  5 South Africa 2021-02-16  48313
+    #>  6 South Africa 2021-02-17  48478
+    #>  7 South Africa 2021-02-18  48708
+    #>  8 South Africa 2021-02-19  48859
+    #>  9 South Africa 2021-02-20  48940
+    #> 10 South Africa 2021-02-21  49053
 
 ### Linear scale
 
